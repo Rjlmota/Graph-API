@@ -3,11 +3,11 @@ from abc import ABC, abstractmethod
 
 class Graph(ABC):
     vertices = []
-    is_digraph = False
+    _is_digraph = False
 
-    def __init__(self, vertices, is_digraph = True):
+    def __init__(self, vertices, is_digraph = False):
         self.vertices = vertices
-        self.is_digraph = is_digraph
+        self._is_digraph = is_digraph
 
     
     def print_graph(self) -> None:
@@ -22,3 +22,11 @@ class Graph(ABC):
     def is_eulerian_open(self) -> bool:
         pass
     
+    def get_neighbours(self, vertice) -> list:
+        pass
+    
+    def is_neighbour(self, a, b) -> bool:
+        pass
+
+    def get_is_digraph(self) -> bool:
+        return self._is_digraph
